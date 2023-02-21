@@ -18,7 +18,7 @@ export default function StepFooter({ handlePre, handleNext, hasErorr = true }) {
 				bgcolor: theme.palette.common.white,
 			}}
 		>
-			<Container maxWidth="sm">
+			<Container maxWidth="md">
 				<Stack direction="row" justifyContent="space-between" alignItems="center" spacing={2}>
 					<Button onClick={handlePre} sx={{ height: "40px", borderRadius: "14px" }}>
 						<Stack direction="row" justifyContent="space-between" alignItems="center" spacing={1}>

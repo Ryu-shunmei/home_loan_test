@@ -67,11 +67,7 @@ export default function () {
 		const data7 = JSON.parse(localStorage.getItem("stepData07", {}));
 		const data8 = JSON.parse(localStorage.getItem("stepData08", {}));
 		const postData = { ...data1, ...data2, ...data3, ...data4, ...data5, ...data6, ...data7, ...data8 };
-		// axios.post("http://127.0.0.1:8000/pre_body", postData).then((res) => {
-		// 	setBody(res.data.body);
-		// 	setOpen(true);
-		// 	console.log(res);
-		// });
+
 		if (type === 1) {
 			axios.post("http://127.0.0.1:8000/pre_body", postData).then((res) => {
 				setBody(res.data.body);
@@ -91,9 +87,9 @@ export default function () {
 	return (
 		<Root>
 			<StepHeader step={8} />
-			<Container maxWidth="sm">
+			<Container maxWidth="md">
 				<Box sx={{ boxShadow: theme.effectStyle.outer, background: theme.palette.background.gray, paddingTop: "144px", paddingBottom: "120px", border: `1px solid ${theme.palette.primary.lighter}` }}>
-					<WlcTitle text="資金計画とその他の借入について教えてください。" />
+					<WlcTitle text="資金計画について教えてください。" />
 					<Group
 						title="資金計画"
 						error={
@@ -248,7 +244,7 @@ export default function () {
 						navigate("/");
 					}}
 					handleTest={() => {
-						handlePost(2);
+						// handlePost(2);
 					}}
 				/>
 			)}

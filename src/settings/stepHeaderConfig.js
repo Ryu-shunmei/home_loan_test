@@ -40,13 +40,13 @@ export const configAll = [
 		id: 7,
 		code: 7,
 		iconify: "carbon:enterprise",
-		lable: "申込人職業",
+		lable: "担保提供者",
 	},
 	{
 		id: 8,
 		code: 8,
 		iconify: "carbon:enterprise",
-		lable: "申込人職業",
+		lable: "資金計画",
 	},
 ];
 
@@ -79,12 +79,12 @@ export const configBase = [
 		id: 7,
 		code: 5,
 		iconify: "carbon:enterprise",
-		lable: "申込人職業",
+		lable: "担保提供者",
 	},
 	{
 		id: 8,
 		code: 6,
 		iconify: "carbon:enterprise",
-		lable: "担保提供者",
+		lable: "資金計画",
 	},
 ];

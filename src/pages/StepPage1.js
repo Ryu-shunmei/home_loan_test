@@ -97,7 +97,7 @@ export default function () {
 	return (
 		<Root>
 			<StepHeader step={1} />
-			<Container maxWidth="sm">
+			<Container maxWidth="md">
 				<Box sx={{ boxShadow: theme.effectStyle.outer, background: theme.palette.background.gray, paddingTop: "144px", paddingBottom: "120px", border: `1px solid ${theme.palette.primary.lighter}` }}>
 					<WlcTitle text="まずは、お借入のご希望をお聞かせください。" />
 					<Group title="借入/借換区分" error={errors.HeaderData1__financeRefinance}>
@@ -346,7 +346,7 @@ export default function () {
 					</Group>
 				</Box>
 			</Container>
-			<StepFooter hasErorr={hasErorr} handlePre={() => navigate("/sbi/history")} handleNext={() => navigate("/case/create/2")} />
+			<StepFooter hasErorr={hasErorr} handlePre={() => navigate("/")} handleNext={() => navigate("/case/create/2")} />
 		</Root>
 	);
 }

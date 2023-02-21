@@ -116,7 +116,7 @@ export default function () {
 	return (
 		<Root>
 			<StepHeader step={7} />
-			<Container maxWidth="sm">
+			<Container maxWidth="md">
 				<Box sx={{ boxShadow: theme.effectStyle.outer, background: theme.palette.background.gray, paddingTop: "144px", paddingBottom: "120px", border: `1px solid ${theme.palette.primary.lighter}` }}>
 					<WlcTitle text="担保提供者について教えてください。" />
 					<Group title="担保提供者の有無" error={errors.HeaderData1__securityProviderUmu}>

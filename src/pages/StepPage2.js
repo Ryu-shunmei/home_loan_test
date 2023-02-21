@@ -91,7 +91,7 @@ export default function () {
 	return (
 		<Root>
 			<StepHeader step={2} />
-			<Container maxWidth="sm">
+			<Container maxWidth="md">
 				<Box sx={{ boxShadow: theme.effectStyle.outer, background: theme.palette.background.gray, paddingTop: "144px", paddingBottom: "120px", border: `1px solid ${theme.palette.primary.lighter}` }}>
 					<WlcTitle text="あなたについて教えてください。" />
 					<Group title="名前" error={errors.HeaderData1__kanaCstmrName1 | errors.HeaderData1__kanaCstmrFirstName1 | errors.HeaderData1__kanjiCstmrLastName1 | errors.HeaderData1__kanjiCstmrFirstName1}>

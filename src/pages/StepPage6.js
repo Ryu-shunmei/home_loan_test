@@ -195,7 +195,7 @@ export default function () {
 	return (
 		<Root>
 			<StepHeader step={6} />
-			<Container maxWidth="sm">
+			<Container maxWidth="md">
 				<Box sx={{ boxShadow: theme.effectStyle.outer, background: theme.palette.background.gray, paddingTop: "144px", paddingBottom: "120px", border: `1px solid ${theme.palette.primary.lighter}` }}>
 					<WlcTitle text="現在のお住まいとご購入物件について教えてください。" />
 					<Group title="現居情報">
