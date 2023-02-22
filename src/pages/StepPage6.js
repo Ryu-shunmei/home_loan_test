@@ -111,9 +111,9 @@ export default function () {
 
 		HeaderData1__acquisitionTimeOfTheLand:
 			data.HeaderData1__acquisitionTimeOfTheLand === "" ? false : !Yup.string().required().matches(REGULARS.ym).isValidSync(data.HeaderData1__acquisitionTimeOfTheLand),
-		HeaderData1__collateralLandArea: data.HeaderData1__collateralLandArea === "" ? false : !Yup.string().required().matches(REGULARS.area).isValidSync(data.HeaderData1__collateralLandArea),
+		HeaderData1__collateralLandArea: data.HeaderData1__collateralLandArea === "" ? false : !Yup.number().required().min(0).max(9999999.999).isValidSync(data.HeaderData1__collateralLandArea),
 		HeaderData1__collateralTotalFloorArea:
-			data.HeaderData1__collateralTotalFloorArea === "" ? false : !Yup.string().required().matches(REGULARS.area).isValidSync(data.HeaderData1__collateralTotalFloorArea),
+			data.HeaderData1__collateralTotalFloorArea === "" ? false : !Yup.number().required().min(0).max(9999999.999).isValidSync(data.HeaderData1__collateralTotalFloorArea),
 
 		HeaderData1__vendorName: data.HeaderData1__vendorName === "" ? false : !Yup.string().required().max(40).matches(REGULARS.em).isValidSync(data.HeaderData1__vendorName),
 		HeaderData1__telephonNumOfVendor: data.HeaderData1__telephonNumOfVendor === "" ? false : !Yup.string().required().matches(REGULARS.mobile_phone).isValidSync(data.HeaderData1__telephonNumOfVendor),
@@ -235,14 +235,14 @@ export default function () {
 												sx={{ width: "52px", textAlign: "center", ml: "20px" }}
 												onChange={(event) => setData({ ...data, HeaderData1__residenceMonths: event.target.value })}
 											/>
-											<Typography variant="rg16">ヶ日</Typography>
+											<Typography variant="rg16">ヶ月</Typography>
 										</Stack>
 									</Box>
 								</Stack>
 								<Box>
 									<Stack direction="row" justifyContent="flex-start" alignItems="center" spacing="15px">
 										<Lable text="年 必須; 半角数字; 0~99;" error={errors.HeaderData1__residenceYears} />
-										<Lable text="日 必須; 半角数字; 0~11;" error={errors.HeaderData1__residenceMonths} />
+										<Lable text="月 必須; 半角数字; 0~11;" error={errors.HeaderData1__residenceMonths} />
 									</Stack>
 								</Box>
 							</Group>
@@ -318,7 +318,7 @@ export default function () {
 											/>
 											<Typography variant="rg16">㎡</Typography>
 										</Stack>
-										<Lable text="任意; 最大で整数部7桁、少数部3桁; 例1234567.890;" error={errors.HeaderData1__collateralLandArea} />
+										<Lable text="任意; 半角数字記号; 0~9999999.999 例1234567.890;" error={errors.HeaderData1__collateralLandArea} />
 									</Box>
 									<Box width="100%">
 										<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
@@ -335,7 +335,7 @@ export default function () {
 											/>
 											<Typography variant="rg16">㎡</Typography>
 										</Stack>
-										<Lable text="任意; 最大で整数部7桁、少数部3桁; 例1234567.890;" error={errors.HeaderData1__collateralTotalFloorArea} />
+										<Lable text="任意; 半角数字記号; 0~9999999.999 例1234567.890;" error={errors.HeaderData1__collateralTotalFloorArea} />
 									</Box>
 								</Stack>
 							</Group>

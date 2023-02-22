@@ -134,38 +134,6 @@ export default function () {
 												<Stack spacing="20px">
 													<Box width="100%">
 														<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
-															カナ　姓
-														</Typography>
-														<TextField
-															type="text"
-															value={item.kanaCstmrName}
-															fullWidth
-															onChange={(event) => {
-																const temp = JSON.parse(JSON.stringify(data.DetailData1));
-																temp[index].kanaCstmrName = event.target.value;
-																setData({ ...data, DetailData1: temp });
-															}}
-														/>
-														<Lable text="必須; 半角文字; サイズ48;" error={detailErrors(index).kanaCstmrName} />
-													</Box>
-													<Box width="100%">
-														<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
-															カナ　名
-														</Typography>
-														<TextField
-															type="text"
-															value={item.kanaCstmrFirstName}
-															fullWidth
-															onChange={(event) => {
-																const temp = JSON.parse(JSON.stringify(data.DetailData1));
-																temp[index].kanaCstmrFirstName = event.target.value;
-																setData({ ...data, DetailData1: temp });
-															}}
-														/>
-														<Lable text="必須; 半角文字; サイズ48;" error={detailErrors(index).kanaCstmrFirstName} />
-													</Box>
-													<Box width="100%">
-														<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
 															漢字　姓
 														</Typography>
 														<TextField
@@ -195,6 +163,38 @@ export default function () {
 															}}
 														/>
 														<Lable text="必須; 全角文字; サイズ48;" error={detailErrors(index).kanjiCstmrFirstName} />
+													</Box>
+													<Box width="100%">
+														<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
+															カナ　姓
+														</Typography>
+														<TextField
+															type="text"
+															value={item.kanaCstmrName}
+															fullWidth
+															onChange={(event) => {
+																const temp = JSON.parse(JSON.stringify(data.DetailData1));
+																temp[index].kanaCstmrName = event.target.value;
+																setData({ ...data, DetailData1: temp });
+															}}
+														/>
+														<Lable text="必須; 半角文字; サイズ48;" error={detailErrors(index).kanaCstmrName} />
+													</Box>
+													<Box width="100%">
+														<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
+															カナ　名
+														</Typography>
+														<TextField
+															type="text"
+															value={item.kanaCstmrFirstName}
+															fullWidth
+															onChange={(event) => {
+																const temp = JSON.parse(JSON.stringify(data.DetailData1));
+																temp[index].kanaCstmrFirstName = event.target.value;
+																setData({ ...data, DetailData1: temp });
+															}}
+														/>
+														<Lable text="必須; 半角文字; サイズ48;" error={detailErrors(index).kanaCstmrFirstName} />
 													</Box>
 												</Stack>
 											</Group>
@@ -258,7 +258,44 @@ export default function () {
 																setData({ ...data, DetailData1: temp });
 															}}
 														/>
-														<Lable text="必須; 半角数字記号; サイズ8; ***-****;" error={detailErrors(index).pstlCode} />
+														<Lable text="必須; 半角数字記号; サイズ8; 999-9999;" error={detailErrors(index).pstlCode} />
+													</Box>
+
+													<Box width="100%">
+														<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
+															漢字　都道府県
+														</Typography>
+														<TextField fullWidth value={item.kanjiAddrPrefecture} sx={{ width: "148px" }} />
+														<Lable text="郵便番号入力すると自動的に上記項目が表示されます。" />
+													</Box>
+													<Box width="100%">
+														<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
+															漢字　市区郡
+														</Typography>
+														<TextField fullWidth value={item.kanjiAddrCityTownCunty} />
+														<Lable text="郵便番号入力すると自動的に上記項目が表示されます。" />
+													</Box>
+													<Box width="100%">
+														<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
+															漢字　町村字丁目
+														</Typography>
+														<TextField fullWidth value={item.kanjiAddrDtl} />
+														<Lable text="郵便番号入力すると自動的に上記項目が表示されます。" />
+													</Box>
+													<Box width="100%">
+														<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
+															漢字　補足住所
+														</Typography>
+														<TextField
+															fullWidth
+															value={item.kanjiAddtlAddr}
+															onChange={(event) => {
+																const temp = JSON.parse(JSON.stringify(data.DetailData1));
+																temp[index].kanjiAddtlAddr = event.target.value;
+																setData({ ...data, DetailData1: temp });
+															}}
+														/>
+														<Lable text="必須; 全角文字; サイズ99;" error={detailErrors(index).kanjiAddtlAddr} />
 													</Box>
 
 													<Box width="100%">
@@ -297,43 +334,6 @@ export default function () {
 															}}
 														/>
 														<Lable text="必須; 半角文字; サイズ138;" error={detailErrors(index).kanaAddtlAddr} />
-													</Box>
-
-													<Box width="100%">
-														<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
-															漢字　都道府県
-														</Typography>
-														<TextField fullWidth value={item.kanjiAddrPrefecture} sx={{ width: "148px" }} />
-														<Lable text="郵便番号入力すると自動的に上記項目が表示されます。" />
-													</Box>
-													<Box width="100%">
-														<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
-															漢字　市区郡
-														</Typography>
-														<TextField fullWidth value={item.kanjiAddrCityTownCunty} />
-														<Lable text="郵便番号入力すると自動的に上記項目が表示されます。" />
-													</Box>
-													<Box width="100%">
-														<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
-															漢字　町村字丁目
-														</Typography>
-														<TextField fullWidth value={item.kanjiAddrDtl} />
-														<Lable text="郵便番号入力すると自動的に上記項目が表示されます。" />
-													</Box>
-													<Box width="100%">
-														<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
-															漢字　補足住所
-														</Typography>
-														<TextField
-															fullWidth
-															value={item.kanjiAddtlAddr}
-															onChange={(event) => {
-																const temp = JSON.parse(JSON.stringify(data.DetailData1));
-																temp[index].kanjiAddtlAddr = event.target.value;
-																setData({ ...data, DetailData1: temp });
-															}}
-														/>
-														<Lable text="必須; 半角文字; サイズ99;" error={detailErrors(index).kanjiAddtlAddr} />
 													</Box>
 												</Stack>
 											</Group>

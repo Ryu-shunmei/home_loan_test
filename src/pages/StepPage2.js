@@ -98,20 +98,6 @@ export default function () {
 						<Stack spacing="20px">
 							<Box width="100%">
 								<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
-									カナ　姓
-								</Typography>
-								<TextField type="text" value={data.HeaderData1__kanaCstmrName1} fullWidth onChange={(event) => setData({ ...data, HeaderData1__kanaCstmrName1: event.target.value })} />
-								<Lable text="必須; 半角文字; サイズ48;" error={errors.HeaderData1__kanaCstmrName1} />
-							</Box>
-							<Box width="100%">
-								<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
-									カナ　名
-								</Typography>
-								<TextField type="text" value={data.HeaderData1__kanaCstmrFirstName1} fullWidth onChange={(event) => setData({ ...data, HeaderData1__kanaCstmrFirstName1: event.target.value })} />
-								<Lable text="必須; 半角文字; サイズ48;" error={errors.HeaderData1__kanaCstmrFirstName1} />
-							</Box>
-							<Box width="100%">
-								<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
 									漢字　姓
 								</Typography>
 								<TextField type="text" value={data.HeaderData1__kanjiCstmrLastName1} fullWidth onChange={(event) => setData({ ...data, HeaderData1__kanjiCstmrLastName1: event.target.value })} />
@@ -123,6 +109,20 @@ export default function () {
 								</Typography>
 								<TextField type="text" value={data.HeaderData1__kanjiCstmrFirstName1} fullWidth onChange={(event) => setData({ ...data, HeaderData1__kanjiCstmrFirstName1: event.target.value })} />
 								<Lable text="必須; 全角文字; サイズ48;" error={errors.HeaderData1__kanjiCstmrFirstName1} />
+							</Box>
+							<Box width="100%">
+								<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
+									カナ　姓
+								</Typography>
+								<TextField type="text" value={data.HeaderData1__kanaCstmrName1} fullWidth onChange={(event) => setData({ ...data, HeaderData1__kanaCstmrName1: event.target.value })} />
+								<Lable text="必須; 半角文字; サイズ48;" error={errors.HeaderData1__kanaCstmrName1} />
+							</Box>
+							<Box width="100%">
+								<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
+									カナ　名
+								</Typography>
+								<TextField type="text" value={data.HeaderData1__kanaCstmrFirstName1} fullWidth onChange={(event) => setData({ ...data, HeaderData1__kanaCstmrFirstName1: event.target.value })} />
+								<Lable text="必須; 半角文字; サイズ48;" error={errors.HeaderData1__kanaCstmrFirstName1} />
 							</Box>
 						</Stack>
 					</Group>
@@ -160,7 +160,36 @@ export default function () {
 										});
 									}}
 								/>
-								<Lable text="必須; 半角数字記号; サイズ8; ***-****;" error={errors.HeaderData1__pstlCode1} />
+								<Lable text="必須; 半角数字記号; サイズ8; 999-9999;" error={errors.HeaderData1__pstlCode1} />
+							</Box>
+
+							<Box width="100%">
+								<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
+									漢字　都道府県
+								</Typography>
+								<TextField fullWidth value={data.HeaderData1__kanjiAddrPrefecture1} sx={{ width: "148px" }} />
+								<Lable text="郵便番号入力すると自動的に上記項目が表示されます。" />
+							</Box>
+							<Box width="100%">
+								<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
+									漢字　市区郡
+								</Typography>
+								<TextField fullWidth value={data.HeaderData1__kanjiAddrCityTownCunty1} />
+								<Lable text="郵便番号入力すると自動的に上記項目が表示されます。" />
+							</Box>
+							<Box width="100%">
+								<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
+									漢字　町村字丁目
+								</Typography>
+								<TextField fullWidth value={data.HeaderData1__kanjiAddrDtl1} />
+								<Lable text="郵便番号入力すると自動的に上記項目が表示されます。" />
+							</Box>
+							<Box width="100%">
+								<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
+									漢字　補足住所
+								</Typography>
+								<TextField fullWidth value={data.HeaderData1__kanjiAddtlAddr1} onChange={(event) => setData({ ...data, HeaderData1__kanjiAddtlAddr1: event.target.value })} />
+								<Lable text="必須; 全角文字; サイズ99;" error={errors.HeaderData1__kanjiAddtlAddr1} />
 							</Box>
 
 							<Box width="100%">
@@ -191,35 +220,6 @@ export default function () {
 								</Typography>
 								<TextField fullWidth value={data.HeaderData1__kanaAddtlAddr1} onChange={(event) => setData({ ...data, HeaderData1__kanaAddtlAddr1: event.target.value })} />
 								<Lable text="必須; 半角文字; サイズ138;" error={errors.HeaderData1__kanaAddtlAddr1} />
-							</Box>
-
-							<Box width="100%">
-								<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
-									漢字　都道府県
-								</Typography>
-								<TextField fullWidth value={data.HeaderData1__kanjiAddrPrefecture1} sx={{ width: "148px" }} />
-								<Lable text="郵便番号入力すると自動的に上記項目が表示されます。" />
-							</Box>
-							<Box width="100%">
-								<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
-									漢字　市区郡
-								</Typography>
-								<TextField fullWidth value={data.HeaderData1__kanjiAddrCityTownCunty1} />
-								<Lable text="郵便番号入力すると自動的に上記項目が表示されます。" />
-							</Box>
-							<Box width="100%">
-								<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
-									漢字　町村字丁目
-								</Typography>
-								<TextField fullWidth value={data.HeaderData1__kanjiAddrDtl1} />
-								<Lable text="郵便番号入力すると自動的に上記項目が表示されます。" />
-							</Box>
-							<Box width="100%">
-								<Typography component={Box} variant="rg14" sx={{ mb: "5px", pl: "2px" }}>
-									漢字　補足住所
-								</Typography>
-								<TextField fullWidth value={data.HeaderData1__kanjiAddtlAddr1} onChange={(event) => setData({ ...data, HeaderData1__kanjiAddtlAddr1: event.target.value })} />
-								<Lable text="必須; 半角文字; サイズ99;" error={errors.HeaderData1__kanjiAddtlAddr1} />
 							</Box>
 						</Stack>
 					</Group>
